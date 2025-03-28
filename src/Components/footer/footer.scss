@@ -1,0 +1,18 @@
+@use "../../scss/" as *;
+
+.footer {
+  text-align: center;
+  .pc {
+    display: block;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .mobile {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+}

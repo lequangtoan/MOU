@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"); // Import a clean and modern font
+
+.custom-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); // Darker overlay for better focus
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px); // Adds a blur effect to the background
+}
+
+.custom-alert {
+  background: linear-gradient(145deg, #5a0a0a, #3e0707); // Gradient background
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); // Softer shadow for depth
+  max-width: 90%;
+  width: 400px;
+  font-family: "Poppins", sans-serif; // Apply the custom font
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #fbc85c; // Highlighted text color
+    font-weight: 600; // Semi-bold for better emphasis
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); // Subtle text shadow
+  }
+
+  button {
+    background: linear-gradient(145deg, #fbc85c, #e0a94b); // Gradient button
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600; // Semi-bold for better emphasis
+    color: #470705;
+    transition: all 0.3s ease;
+    font-family: "Poppins", sans-serif; // Apply the custom font
+
+    &:hover {
+      color: #fff;
+      background: linear-gradient(
+        145deg,
+        #b30021,
+        #8a001a
+      ); // Darker gradient on hover
+      transform: scale(1.05); // Slight zoom effect
+    }
+
+    &:active {
+      transform: scale(0.95); // Pressed effect
+    }
+  }
+}

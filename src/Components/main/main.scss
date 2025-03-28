@@ -1,0 +1,397 @@
+@use "../../scss/" as *;
+
+.Main {
+  margin-top: -5rem;
+  padding-top: 5rem;
+  position: relative;
+  width: calc(100% + 16px);
+  background: url(../../asset/Background/BG_page.png) no-repeat center top/cover;
+  overflow-x: hidden;
+
+  @include tablet {
+    margin-top: -6rem;
+    padding-top: 2rem;
+  }
+
+  &__logo {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+    img {
+      @include tablet {
+        width: 35rem;
+        margin: 1rem 0 4rem;
+      }
+      @include mobile {
+        width: 22rem;
+        margin: 0.5rem 0 1.5rem;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    margin-top: 2rem;
+    position: static;
+    @include tablet {
+      margin-top: 0.5rem;
+    }
+    .swiper-pagination-bullet,
+    .swiper-pagination-bullet-active {
+      margin: 0 10px;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: transparent center/100% auto no-repeat;
+      @include tablet {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    .swiper-pagination-bullet {
+      background-image: url(../../asset/Icon/Nor.png);
+    }
+    .swiper-pagination-bullet-active {
+      background-image: url(../../asset/Icon/Hover.png);
+    }
+  }
+
+  .list__video {
+    @include flex(center, flex-start);
+    flex-direction: column;
+
+    .list {
+      margin: 2rem 0 8rem;
+      width: 80%;
+      @include flex(center, flex-start);
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      @include tablet {
+        width: 90%;
+        margin: 2rem 0 3rem;
+      }
+      @include mobile {
+        width: 95%;
+        margin: 1rem 0 2rem;
+      }
+
+      .video {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        .video__phay {
+          width: 100%;
+          @include tablet {
+            width: 75%;
+          }
+          @include mobile {
+            width: 50%;
+          }
+        }
+      }
+
+      .show {
+        display: block;
+      }
+
+      .hide {
+        display: none;
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 5rem;
+      height: 5rem;
+      top: 40%;
+      background: center/100% auto no-repeat;
+      &:after {
+        display: none;
+      }
+      @include tablet {
+        display: none;
+      }
+    }
+    .swiper-button-prev {
+      background-image: url(../../asset/video/Pre.png);
+    }
+    .swiper-button-next {
+      background-image: url(../../asset/video/Next.png);
+    }
+  }
+
+  .list__storikit {
+    @include flex(center, flex-start);
+    flex-direction: column;
+
+    .list {
+      margin-bottom: 2rem;
+      width: 70%;
+      @include flex(center, center);
+      @include tablet {
+        width: 80%;
+      }
+      @include mobile {
+        width: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .swiper-slide-next {
+        transform: scale(1.18);
+      }
+
+      .swiper-pagination {
+        margin-top: 1.5rem;
+      }
+
+      .pc {
+        display: block;
+        @include flex(center, flex-start);
+        @include tablet {
+          display: none;
+        }
+        .list__a {
+          width: 20%;
+          margin: 2rem 0.5rem 4rem;
+        }
+      }
+      .mobile {
+        display: none;
+        width: 40rem;
+        @include tablet {
+          display: block;
+        }
+        @include mobile {
+          display: block;
+          width: 30rem;
+        }
+        .list__a {
+          width: 10rem;
+          margin: 3rem 0;
+          @include tablet {
+            width: 12rem;
+            margin: 2rem 0 1rem;
+          }
+          @include mobile {
+            width: 10rem;
+            margin: 2rem 10px 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .list__music {
+    @include flex(center, center);
+    flex-direction: column;
+
+    .list {
+      margin: 2rem 0 4rem;
+      position: relative;
+      width: 70%;
+      max-width: 95%;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      @include tablet {
+        width: 100%;
+        margin: 2rem 0 1rem;
+      }
+      @include mobile {
+        margin: 1rem 0;
+      }
+
+      .bg {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+      .cd {
+        position: absolute;
+        top: 50%;
+        right: 11%;
+        transform: translateY(-50%);
+        width: 41%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+        z-index: 2;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .cd-rotating {
+        animation: rotate 10s linear infinite;
+      }
+
+      .thumbnail {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 100%;
+        width: 70%;
+        // border: 2px solid #000;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgb(0 0 0);
+        z-index: 3;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .time-display {
+        position: absolute;
+        bottom: 1rem;
+        width: 70%;
+        z-index: 4;
+        @include tablet {
+          bottom: 0rem;
+        }
+
+        @include flex(flex-end, center);
+        span {
+          width: 10%;
+          @include tablet {
+            width: 20%;
+          }
+        }
+        .song {
+          width: 100%;
+          text-align: center;
+          padding: 0 0 10px;
+          @include flex(center, center);
+          flex-direction: column;
+
+          .Control-Button-Group {
+            width: 40%;
+            @include flex(center, space-around);
+            margin-bottom: 0.5rem;
+            @include tablet {
+              width: 68%;
+            }
+            @include mobile {
+              width: 65%;
+            }
+
+            img {
+              width: 100%;
+
+              @include tablet {
+                width: 68%;
+              }
+              @include mobile {
+                width: 65%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .line {
+      width: 100%;
+      text-align: center;
+      @include flex(center, center);
+
+      @include tablet {
+        width: 65%;
+      }
+      .pc {
+        display: block;
+        width: 60%;
+        @include tablet {
+          display: none;
+        }
+      }
+      .mobile {
+        display: none;
+        @include tablet {
+          display: block;
+        }
+      }
+    }
+    .nav_menu__button {
+      width: 50%;
+      text-align: center;
+      margin: 2rem 0;
+      @include tablet {
+        width: 90%;
+        margin: 1rem 0 4rem;
+      }
+      @include mobile {
+        left: 0;
+        transform: translateX(0);
+      }
+      &__bar {
+        @include flex(center, space-evenly);
+        img {
+          width: 15rem;
+          @include mobile {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .ten__hover:hover {
+      cursor: pointer;
+      filter: brightness(1.5);
+    }
+  }
+
+  .site-animation-rotateRight {
+    -webkit-animation: rotateRight 10s linear infinite;
+    animation: rotateRight 10s linear infinite;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+  }
+  .site-animation-rotateRight-pause {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+
+  @-webkit-keyframes rotateRight {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn);
+    }
+  }
+  @keyframes rotateRight {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn);
+    }
+  }
+}
